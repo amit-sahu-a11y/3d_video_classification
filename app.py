@@ -4,7 +4,6 @@ import torch
 from models.simple3dcnn import Simple3DCNN
 from utils import preprocess_video
 from torchvision import transforms
-# from models.simple3dcnn import Simple3DCNN
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'static/uploads'
@@ -44,7 +43,3 @@ def result():
 if __name__ == "__main__":
     app.run(debug=True)
 
-
-model = Simple3DCNN(num_classes=len(classes))
-model.load_state_dict(torch.load("saved_models/model.pth"))
-model.eval()  # Set the model to evaluation mode
